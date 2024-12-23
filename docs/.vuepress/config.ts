@@ -1,6 +1,7 @@
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
+import notes from './notes/index'
 
 export default defineUserConfig({
   base: '/',
@@ -14,11 +15,12 @@ export default defineUserConfig({
     '/en/': {
       title: 'blog',
       lang: 'en-US',
-      description: '个人blog',
+      description: 'Personal blog',
     },
   },
 
   bundler: webpackBundler(),
+
 
   theme: plumeTheme({
     // 添加您的部署域名
@@ -27,15 +29,25 @@ export default defineUserConfig({
     docsRepo: '',
     docsDir: 'docs',
 
+    // 控制部分自动生成
+    autoFrontmatter: {
+      permalink: true, // 是否生成永久链接
+      createTime: true, // 是否生成创建时间
+      title: true, // 是否生成标题
+    },
+
+    // docx
+    notes,
+
     plugins: {
       /**
        * Shiki 代码高亮
        * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/
        */
-      // shiki: {
-           // 强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
-      //   languages: ['shell', 'bash', 'typescript', 'javascript'],
-      // },
+      shiki: {
+          //  强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
+        languages: ['shell', 'bash', 'typescript', 'javascript'],
+      },
 
       /**
        * markdown enhance
@@ -87,5 +99,6 @@ export default defineUserConfig({
       //   inputPosition: 'top',
       // },
     },
+
   }),
 })
