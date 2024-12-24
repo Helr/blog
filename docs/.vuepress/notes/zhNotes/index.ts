@@ -39,8 +39,8 @@ const noteList: NoteItem[] = [
         sidebar: 'auto'
     },
     {
-        dir: 'typescript',
-        link: '/typescript/',
+        dir: 'Typescript',
+        link: '/Typescript/',
         sidebar: 'auto'
     },
     {

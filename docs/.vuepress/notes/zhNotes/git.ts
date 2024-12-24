@@ -1,7 +1,7 @@
 import type {NoteItem} from "vuepress-theme-plume/lib/shared";
 
 export const  zhGitNote : NoteItem = {
-    dir: 'git',
+    dir: 'Git',
     link: '/git/',
     sidebar: 'auto'
 }

@@ -7,9 +7,10 @@ export const zhNavbar: NavItem[] = defineNavbarConfig([
     {text: '归档', link: '/blog/archives/'},
     {
         text: '笔记',
+        activeMatch: '^/notes/',
         items: [
             {text: '示例', link: '/notes/demo/README.md'},
-            {text: 'git', link: '/notes/Git/README.md'}
+            {text: 'Git', link: '/notes/Git/README.md'}
         ]
     },
 ])
