@@ -10,7 +10,6 @@
   },
   "scripts": {
     "dev": "vuepress dev docs",
-    "prepare": "husky install",
     "docs:dev": "vuepress dev docs",
     "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
     "docs:build": "vuepress build docs --clean-cache --clean-temp",
