@@ -20,14 +20,12 @@ Git 提交信息通常包括以下三部分：
 
 **示例格式**:
 
-```javascript
-<类型>(
-    <模块>):
-        <简短描述>
+```text
+<类型>( <模块>):<简短描述>
 
-            <详细描述>
+<详细描述>
 
-                <Footer>
+<Footer>
 ```
 
 ## 常见的提交类型
@@ -95,12 +93,17 @@ Closes #42
 
 配置这些工具能够帮助确保团队的一致性，并在提交时自动进行检查。
 
+
+- <Badge type="danger" text=" TODO 以后添加 `Husky` 和 `lint-staged` "></Badge>
+
 **Example of Husky + Commitlint Setup**:
 
 1. 安装 `husky` 和 `commitlint`：
 
 ```bash
-npm install --save-dev husky @commitlint/{config-conventional,cli}
+npm install --save-dev husky
+npm i @commitlint/config-conventional @commitlint/cli -D
+npm install lint-staged -D
 ```
 
 2. 配置 `commitlint`： 在项目根目录下创建 `.commitlintrc.json` 文件，内容如下：
