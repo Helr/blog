@@ -1,7 +1,6 @@
 import { webpackBundler } from '@vuepress/bundler-webpack'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
-import notes from './notes/index'
 
 export default defineUserConfig({
   base: '/',
@@ -35,9 +34,6 @@ export default defineUserConfig({
       createTime: true, // 是否生成创建时间
       title: true, // 是否生成标题
     },
-
-    // docx
-    notes,
 
     plugins: {
       /**
