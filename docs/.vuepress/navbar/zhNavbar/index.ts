@@ -1,4 +1,5 @@
 import {defineNavbarConfig, type NavItem} from "vuepress-theme-plume";
+import {zhVueNote} from "../../notes/zhNotes/Vue";
 
 export const zhNavbar: NavItem[] = defineNavbarConfig([
     {text: '首页', link: '/'},
@@ -10,7 +11,9 @@ export const zhNavbar: NavItem[] = defineNavbarConfig([
         activeMatch: '^/notes/',
         items: [
             {text: '示例', link: '/notes/demo/README.md'},
-            {text: 'Git', link: '/notes/Git/README.md'}
+            {text: 'Git', link: '/notes/Git/README.md'},
+            {text: 'JavaScript', link: '/notes/JavaScript/README.md'},
+            {text: 'Vue', link: '/notes/Vue/Basic.md'},
         ]
     },
 ])

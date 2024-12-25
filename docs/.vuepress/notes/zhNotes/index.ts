@@ -2,6 +2,8 @@ import {defineNoteConfig, defineNotesConfig} from "vuepress-theme-plume";
 // docx
 import {zhGitNote} from "./git";
 import type {NoteItem} from "vuepress-theme-plume/lib/shared";
+import {zhJavaScriptNote} from "./JavaScript";
+import {zhVueNote} from "./Vue";
 
 /* =================== locale: zh-CN ======================= */
 
@@ -29,11 +31,6 @@ const noteList: NoteItem[] = [
         sidebar: 'auto'
     },
     {
-        dir: 'JavaScript',
-        link: '/JavaScript/',
-        sidebar: 'auto'
-    },
-    {
         dir: 'React',
         link: '/React/',
         sidebar: 'auto'
@@ -43,13 +40,10 @@ const noteList: NoteItem[] = [
         link: '/Typescript/',
         sidebar: 'auto'
     },
-    {
-        dir: 'Vue',
-        link: '/Vue/',
-        sidebar: 'auto'
-    },
     zhDemoNote,
-    zhGitNote
+    zhGitNote,
+    zhJavaScriptNote,
+    zhVueNote
 ]
 
 export const zhNotes = defineNotesConfig({
