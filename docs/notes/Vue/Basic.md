@@ -26,7 +26,7 @@ Vue (发音为 /vjuː/，类似 view) 是一款用于构建用户界面的 JavaS
 
 ```html
 
-<script src="https://unpkg.com/vue@next"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script>
     const app = Vue.createApp({})
     app.mount('#app')
