@@ -13,7 +13,7 @@ export const zhNavbar: NavItem[] = defineNavbarConfig([
             {text: '示例', link: '/notes/demo/README.md'},
             {text: 'Git', link: '/notes/Git/README.md'},
             {text: 'JavaScript', link: '/notes/JavaScript/README.md'},
-            {text: 'Vue', link: '/notes/Vue/Basic.md'},
+            {text: 'Vue', link: '/notes/Vue/start.md'},
         ]
     },
 ])

@@ -1,7 +1,7 @@
 ---
-title: Basic
+title: start
 createTime: 2024/12/25 15:20:33
-permalink: /Vue/crb26jrt/
+permalink: /Vue/start/
 ---
 
 # vue 基础
