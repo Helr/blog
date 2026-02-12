@@ -42,34 +42,70 @@ export default defineUserConfig({
       { icon: 'github', link: 'https://github.com/Helr' },
       // ... more
     ],
-    blog:{
-      /**
-       * 通过 glob string 配置包含文件，
-       * 默认读取 源目录中的所有 `.md` 文件，但会排除 `notes` 配置中用于笔记的目录。
-       */
-      include: ['**/*.md'],
-      // 如果希望只将源目录下某个目录下的文章读取为博客文章，比如 `blog` 目录，可以配置为：
-      // include: ['blog/**/*.md'],
+    
+    // 使用 collections 配置
+    collections:[
+      {
+        type: 'post', // 替代原博客功能
+        dir: 'blog', // 指向 docs/blog 目录
+        title: '博客', // 集合显示名称
+        // 原博客配置继续保留
+        // ...
+        
+        /**
+         * 通过 glob string 配置包含文件，
+         * 默认读取 源目录中的所有 `.md` 文件，但会排除 `notes` 配置中用于笔记的目录。
+         */
+        include: ['**/*.md'],
+        /**
+         * 通过 glob string 配置排除的文件，相对于 源目录
+         */
+        exclude: ['.vuepress/', '**/README.md'],
 
-      /**
-       * 通过 glob string 配置排除的文件，相对于 源目录
-       */
-      exclude: ['.vuepress/', '**/README.md'],
+        // 禁用分页
+        // pagination: false,
+        // 每页显示的文章数量
+        pagination: 15,
+        //  配置 封面图 布局位置
+        // postCover: 'left', // 'left' | 'right' | 'odd-left' | 'odd-right' | 'top'
+        postCover: {
+          // url:'/blog/images/blog/bg-blog.jpg',
+          layout: 'odd-left',
+          ratio: '16:9',
+          width: 300,
+          compact: false
+        }
+      },
+    ],
 
-      // 禁用分页
-      // pagination: false,
-      // 每页显示的文章数量
-      pagination: 15,
-      //  配置 封面图 布局位置
-      // postCover: 'left', // 'left' | 'right' | 'odd-left' | 'odd-right' | 'top'
-      postCover: {
-        // url:'/blog/images/blog/bg-blog.jpg',
-        layout: 'odd-left',
-        ratio: '16:9',
-        width: 300,
-        compact: false
-      }
-    },
+    // blog:{
+    //   /**
+    //    * 通过 glob string 配置包含文件，
+    //    * 默认读取 源目录中的所有 `.md` 文件，但会排除 `notes` 配置中用于笔记的目录。
+    //    */
+    //   include: ['**/*.md'],
+    //   // 如果希望只将源目录下某个目录下的文章读取为博客文章，比如 `blog` 目录，可以配置为：
+    //   // include: ['blog/**/*.md'],
+
+    //   /**
+    //    * 通过 glob string 配置排除的文件，相对于 源目录
+    //    */
+    //   exclude: ['.vuepress/', '**/README.md'],
+
+    //   // 禁用分页
+    //   // pagination: false,
+    //   // 每页显示的文章数量
+    //   pagination: 15,
+    //   //  配置 封面图 布局位置
+    //   // postCover: 'left', // 'left' | 'right' | 'odd-left' | 'odd-right' | 'top'
+    //   postCover: {
+    //     // url:'/blog/images/blog/bg-blog.jpg',
+    //     layout: 'odd-left',
+    //     ratio: '16:9',
+    //     width: 300,
+    //     compact: false
+    //   }
+    // },
 
     // 控制部分自动生成
     autoFrontmatter: {
@@ -87,7 +123,8 @@ export default defineUserConfig({
        */
       shiki: {
           //  强烈建议预设代码块高亮语言，插件默认加载所有语言会产生不必要的时间开销
-        languages: ['shell', 'bash', 'typescript', 'javascript','vue','vue-html'],
+        // languages: ['shell', 'bash', 'typescript', 'javascript','vue','vue-html'],
+        langs: ['shell', 'bash', 'typescript', 'javascript','vue','vue-html'],
         lineNumbers: true, // 是否显示行号
       },
 
@@ -95,14 +132,14 @@ export default defineUserConfig({
        * markdown enhance
        * @see https://theme-plume.vuejs.press/config/plugins/markdown-enhance/
        */
-      markdownEnhance: {
-        demo: true,
-      //   include: true,
-      //   chart: true,
-      //   echarts: true,
-      //   mermaid: true,
-      //   flowchart: true,
-      },
+      // markdownEnhance: {
+      //   demo: true,
+      // //   include: true,
+      // //   chart: true,
+      // //   echarts: true,
+      // //   mermaid: true,
+      // //   flowchart: true,
+      // },
 
       /**
        *  markdown power
