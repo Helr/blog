@@ -1,3 +1,8 @@
+---
+title: git_project_workflow
+createTime: 2026/02/12 16:08:33
+permalink: /blog/gfbuns9l/
+---
 # 单人项目 Git 工作流程与升级指南
 
 本文档整理了本次会话中关于单人项目 Git 分支管理、升级流程、常用 Git 命令以及注意事项的内容，适合导出 Markdown 使用。
