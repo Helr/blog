@@ -20,5 +20,5 @@ config:
           theme: alt
 title: helr
 createTime: 2026/02/12 15:02:28
-permalink: /blog/khi8mshg/
+permalink: /index/
 ---

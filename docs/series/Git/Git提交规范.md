@@ -1,7 +1,7 @@
 ---
 title: 规范
 createTime: 2024/12/24 09:15:24
-permalink: /series/git/ur6qna7c/
+permalink: /series/Git/ur6qna7c/
 ---
 
 # Git 提交规范

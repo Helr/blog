@@ -2,22 +2,22 @@ import {defineNavbarConfig, type ThemeNavItem} from "vuepress-theme-plume";
 
 export const zhNavbar: ThemeNavItem[] = defineNavbarConfig([
     {text: '首页', link: '/'},
-    {text: '博客', link: '/posts/'},
+    {text: '博客', link: '/posts/', activeMatch: '^/posts/',},
     {
         text: '系列', 
         // link: '/series/',
         // prefix: '/series/',
         activeMatch:'^/series/',
         items: [
-            {text: 'JavaScript', link: '/series/JavaScript/README.md'},
-            {text: 'Vue', link: '/series/Vue/start.md'},
-            {text: '示例', link: '/series/demo/'},
-            {text: 'Git', link: '/series/Git/'},
+            {text: 'JavaScript', link: '/series/JavaScript/README.md', activeMatch: '^/series/JavaScript/',},
+            {text: 'Vue', link: '/series/Vue/start.md', activeMatch: '^/series/Vue/',},
+            {text: 'Git', link: '/series/Git/git.md', activeMatch: '^/series/Git/',},
+            {text: '示例', link: '/series/demo/', activeMatch: '^/series/demo/',},
         ]
 
     },
-    {text: '笔记', link: '/notes/'},
-    {text: '代办', link: '/docs/TODO/'},
+    {text: '笔记', link: '/notes/', activeMatch: '^/notes/',},
+    {text: '代办', link: '/docs/TODO/', activeMatch: '^/docs/TODO/',},
     // {text: '标签', link: '/tags/'},
     // {text: '归档', link: '/archives/'},
     {

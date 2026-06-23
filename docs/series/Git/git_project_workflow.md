@@ -1,7 +1,7 @@
 ---
 title: git_project_workflow
 createTime: 2026/02/12 16:08:33
-permalink: /series/git/gfbuns9l/
+permalink: /series/Git/gfbuns9l/
 ---
 # 单人项目 Git 工作流程与升级指南
 
