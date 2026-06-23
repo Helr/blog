@@ -1,0 +1,423 @@
+/* ==========================================================================
+   VuePress Theme - Editorial Tech Blue
+   风格：冷感银灰 + Editorial Blue + 轻玻璃感
+   适合：技术博客 / 设计博客 / AI / 前端 / 个人品牌站
+   ========================================================================== */
+
+/* ==========================================================================
+   1) 全局主题变量（亮色）
+   ========================================================================== */
+
+:root {
+  /**
+   * 字体
+   * -------------------------------------------------------------------------- */
+  --vp-font-family-base: "Inter", "PingFang SC", "MiSans", "Noto Sans SC", sans-serif;
+  --vp-font-family-mono: "JetBrains Mono", "Fira Code", "SFMono-Regular", monospace;
+
+  /**
+   * 品牌色 / Brand
+   * -------------------------------------------------------------------------- */
+  /* --vp-c-brand-1: #4676d7;
+  --vp-c-brand-2: #6b93e6;
+  --vp-c-brand-3: #dbe7ff; */
+
+
+  --vp-c-brand-1: #4d73c9;
+  --vp-c-brand-2: #6f90da;
+  --vp-c-brand-3: #dde7fb;
+  --vp-c-brand-soft: rgba(70, 118, 215, 0.14);
+
+  /**
+   * 文本颜色 / Text
+   * -------------------------------------------------------------------------- */
+  --vp-c-text-1: rgba(18, 22, 29, 0.96);
+  --vp-c-text-2: rgba(18, 22, 29, 0.72);
+  --vp-c-text-3: rgba(18, 22, 29, 0.48);
+
+  /**
+   * 背景色 / Background
+   * -------------------------------------------------------------------------- */
+  --vp-c-bg: #f8fafc;                /* 页面主背景 */
+  --vp-c-bg-alt: #f3f6fa;            /* 次层背景 */
+  --vp-c-bg-soft: #eef3f8;           /* 柔和背景 / 卡片底色 */
+  --vp-c-bg-elv: #ffffff;            /* 悬浮层 / 卡片浮起 */
+
+  --vp-nav-bg-color: rgba(248, 250, 252, 0.72);
+  --vp-nav-screen-bg-color: #f8fafc;
+  --vp-local-nav-bg-color: rgba(248, 250, 252, 0.78);
+
+  /* --vp-sidebar-bg-color: #eef3f8;    侧边栏背景 */
+  --vp-sidebar-bg-color: #f8fafc;    /* 侧边栏背景 */
+  --vp-code-block-bg: #eaf0f7;       /* 代码块背景 */
+
+  /**
+   * 边框 / 分割线
+   * -------------------------------------------------------------------------- */
+  --vp-c-divider: rgba(60, 72, 88, 0.12);
+  --vp-c-gutter: rgba(60, 72, 88, 0.06);
+  --vp-c-border: rgba(60, 72, 88, 0.12);
+  --vp-c-border-soft: rgba(60, 72, 88, 0.08);
+
+  /**
+   * 按钮 / Buttons
+   * -------------------------------------------------------------------------- */
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-bg: #4676d7;
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-hover-bg: #5a86df;
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: #ffffff;
+  --vp-button-brand-active-bg: #3f6ccc;
+
+  --vp-button-alt-border: rgba(60, 72, 88, 0.12);
+  --vp-button-alt-text: rgba(18, 22, 29, 0.88);
+  --vp-button-alt-bg: #f3f6fa;
+  --vp-button-alt-hover-border: rgba(70, 118, 215, 0.16);
+  --vp-button-alt-hover-text: #4676d7;
+  --vp-button-alt-hover-bg: #edf3ff;
+  --vp-button-alt-active-border: rgba(70, 118, 215, 0.18);
+  --vp-button-alt-active-text: #4676d7;
+  --vp-button-alt-active-bg: #e6efff;
+
+  /**
+   * 首页 Hero
+   * -------------------------------------------------------------------------- */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    #2f5fbe 0%,
+    #4676d7 28%,
+    #6b93e6 60%,
+    #7eb3ff 100%
+  );
+
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle at 30% 30%,
+    rgba(70, 118, 215, 0.26) 0%,
+    rgba(70, 118, 215, 0.14) 28%,
+    rgba(255, 255, 255, 0) 65%
+  );
+  --vp-home-hero-image-filter: blur(68px);
+
+  /**
+   * 自定义块 / Custom Blocks
+   * -------------------------------------------------------------------------- */
+  --vp-custom-block-tip-border: rgba(70, 118, 215, 0.22);
+  --vp-custom-block-tip-text: rgba(24, 33, 45, 0.92);
+  --vp-custom-block-tip-bg: rgba(70, 118, 215, 0.08);
+
+  --vp-custom-block-info-border: rgba(113, 128, 150, 0.18);
+  --vp-custom-block-info-text: rgba(24, 33, 45, 0.9);
+  --vp-custom-block-info-bg: rgba(113, 128, 150, 0.08);
+
+  --vp-custom-block-warning-border: rgba(245, 158, 11, 0.24);
+  --vp-custom-block-warning-text: rgba(102, 60, 0, 0.92);
+  --vp-custom-block-warning-bg: rgba(245, 158, 11, 0.1);
+
+  --vp-custom-block-danger-border: rgba(239, 68, 68, 0.22);
+  --vp-custom-block-danger-text: rgba(120, 26, 26, 0.92);
+  --vp-custom-block-danger-bg: rgba(239, 68, 68, 0.1);
+
+  /**
+   * 代码 / Code
+   * -------------------------------------------------------------------------- */
+  --vp-code-color: #3f6ccc;
+  --vp-code-link-color: #4676d7;
+
+  /**
+   * 布局
+   * -------------------------------------------------------------------------- */
+  --vp-layout-max-width: 1480px;
+}
+
+/* ==========================================================================
+   2) 深色主题变量
+   ========================================================================== */
+
+[data-theme="dark"] {
+  /**
+   * 品牌色 / Brand
+   * -------------------------------------------------------------------------- */
+  --vp-c-brand-1: #8eb8ff;
+  --vp-c-brand-2: #b1ccff;
+  --vp-c-brand-3: #2d4f87;
+  --vp-c-brand-soft: rgba(142, 184, 255, 0.18);
+
+  /**
+   * 文本颜色 / Text
+   * -------------------------------------------------------------------------- */
+  --vp-c-text-1: rgba(241, 245, 249, 0.9);
+  --vp-c-text-2: rgba(241, 245, 249, 0.66);
+  --vp-c-text-3: rgba(241, 245, 249, 0.4);
+
+  /**
+   * 背景色 / Background
+   * -------------------------------------------------------------------------- */
+  --vp-c-bg: #0f141b;                /* 页面主背景 */
+  --vp-c-bg-alt: #111821;            /* 次层背景 */
+  --vp-c-bg-soft: #131b24;           /* 柔和背景 / 卡片底色 */
+  --vp-c-bg-elv: #161f2a;            /* 悬浮层 / 卡片浮起 */
+
+  --vp-nav-bg-color: rgba(15, 20, 27, 0.72);
+  --vp-nav-screen-bg-color: #0f141b;
+  --vp-local-nav-bg-color: rgba(15, 20, 27, 0.82);
+
+  --vp-sidebar-bg-color: #0c1117;    /* 侧边栏背景（已优化） */
+  --vp-code-block-bg: #131922;       /* 代码块背景 */
+
+  /**
+   * 边框 / 分割线
+   * -------------------------------------------------------------------------- */
+  --vp-c-divider: rgba(148, 163, 184, 0.14);
+  --vp-c-gutter: rgba(148, 163, 184, 0.08);
+  --vp-c-border: rgba(148, 163, 184, 0.14);
+  --vp-c-border-soft: rgba(148, 163, 184, 0.08);
+
+  /**
+   * 按钮 / Buttons
+   * -------------------------------------------------------------------------- */
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #0f141b;
+  --vp-button-brand-bg: #8eb8ff;
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: #0f141b;
+  --vp-button-brand-hover-bg: #a7c7ff;
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: #0f141b;
+  --vp-button-brand-active-bg: #7eaeff;
+
+  --vp-button-alt-border: rgba(148, 163, 184, 0.14);
+  --vp-button-alt-text: rgba(241, 245, 249, 0.84);
+  --vp-button-alt-bg: #151d27;
+  --vp-button-alt-hover-border: rgba(142, 184, 255, 0.2);
+  --vp-button-alt-hover-text: #b1ccff;
+  --vp-button-alt-hover-bg: #182230;
+  --vp-button-alt-active-border: rgba(142, 184, 255, 0.22);
+  --vp-button-alt-active-text: #b1ccff;
+  --vp-button-alt-active-bg: #1b2635;
+
+  /**
+   * 首页 Hero
+   * -------------------------------------------------------------------------- */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    120deg,
+    #8eb8ff 0%,
+    #7aa8ff 30%,
+    #9fc4ff 60%,
+    #d5e6ff 100%
+  );
+
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle at 50% 40%,
+    rgba(142, 184, 255, 0.22) 0%,
+    rgba(70, 118, 215, 0.16) 28%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  --vp-home-hero-image-filter: blur(76px);
+
+  /**
+   * 自定义块 / Custom Blocks
+   * -------------------------------------------------------------------------- */
+  --vp-custom-block-tip-border: rgba(142, 184, 255, 0.24);
+  --vp-custom-block-tip-text: rgba(230, 238, 248, 0.92);
+  --vp-custom-block-tip-bg: rgba(142, 184, 255, 0.1);
+
+  --vp-custom-block-info-border: rgba(148, 163, 184, 0.18);
+  --vp-custom-block-info-text: rgba(230, 238, 248, 0.9);
+  --vp-custom-block-info-bg: rgba(148, 163, 184, 0.08);
+
+  --vp-custom-block-warning-border: rgba(251, 191, 36, 0.26);
+  --vp-custom-block-warning-text: rgba(255, 236, 179, 0.92);
+  --vp-custom-block-warning-bg: rgba(245, 158, 11, 0.12);
+
+  --vp-custom-block-danger-border: rgba(248, 113, 113, 0.24);
+  --vp-custom-block-danger-text: rgba(255, 210, 210, 0.92);
+  --vp-custom-block-danger-bg: rgba(239, 68, 68, 0.12);
+
+  /**
+   * 代码 / Code
+   * -------------------------------------------------------------------------- */
+  --vp-code-color: #9fc4ff;
+  --vp-code-link-color: #8eb8ff;
+}
+
+/* ==========================================================================
+   3) 结构与视觉增强
+   ========================================================================== */
+
+/* 顶部导航：轻毛玻璃感 */
+.VPNav {
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom: 1px solid var(--vp-c-gutter);
+}
+
+/* 侧边栏边界更柔和 */
+.VPSidebar {
+  border-right: 1px solid var(--vp-c-gutter);
+}
+
+/* 右侧目录区域 */
+.VPDocAsideOutline .content {
+  border-left: 1px solid var(--vp-c-gutter);
+  padding-left: 16px;
+}
+
+/* ==========================================================================
+   4) 文档内容区优化
+   ========================================================================== */
+
+/* 引用块：更像编辑注释 */
+.vp-doc blockquote {
+  /* border-left: 3px solid var(--vp-c-brand-1); */
+  background: var(--vp-c-bg-soft);
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: var(--vp-c-text-2);
+  margin: 20px 0;
+}
+
+/* 表格：更整洁、更像卡片 */
+.vp-doc table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-border);
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: none;
+  border-bottom: 1px solid var(--vp-c-border-soft);
+}
+
+.vp-doc tr:last-child td {
+  border-bottom: none;
+}
+
+.vp-doc tr:nth-child(2n) {
+  background: color-mix(in srgb, var(--vp-c-bg-soft) 72%, transparent);
+}
+
+/* 行内代码 */
+.vp-doc :not(pre) > code {
+  background: color-mix(in srgb, var(--vp-c-brand-1) 10%, var(--vp-c-bg-soft));
+  color: var(--vp-code-color);
+  padding: 0.2em 0.45em;
+  border-radius: 8px;
+  font-size: 0.92em;
+}
+
+/* ==========================================================================
+   5) 代码块优化
+   ========================================================================== */
+
+div[class*='language-'] {
+  border: 1px solid var(--vp-c-border-soft);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 20, 27, 0.04);
+  overflow: hidden;
+}
+
+[data-theme='dark'] div[class*='language-'] {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
+}
+
+/* 代码块标题 / meta 行（如果你有使用） */
+div[class*='language-'] .lang {
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   6) 首页 / Hero 区域微调
+   ========================================================================== */
+
+.VPHero .name,
+.VPHero .text {
+  letter-spacing: -0.02em;
+}
+
+/* Hero 标题更有一点品牌感 */
+.VPHero .name {
+  font-weight: 800;
+}
+
+/* 首页 Feature / 图片圆角统一 */
+.VPFeature,
+.VPDoc .content-container img {
+  border-radius: 16px;
+}
+
+/* ==========================================================================
+   7) 卡片、图片、交互细节
+   ========================================================================== */
+
+/* Feature 卡片 */
+.VPFeature {
+  border: 1px solid var(--vp-c-border-soft);
+  background: color-mix(in srgb, var(--vp-c-bg-elv) 88%, var(--vp-c-brand-1) 2%);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.VPFeature:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 24%, var(--vp-c-border));
+  box-shadow: 0 14px 36px rgba(70, 118, 215, 0.08);
+}
+
+[data-theme='dark'] .VPFeature:hover {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+/* 图片在文档中更柔和一点 */
+.vp-doc img {
+  box-shadow: 0 10px 30px rgba(15, 20, 27, 0.06);
+}
+
+[data-theme='dark'] .vp-doc img {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.24);
+}
+
+/* ==========================================================================
+   8) 链接与过渡
+   ========================================================================== */
+
+a,
+button,
+.VPFeature,
+.vp-doc img,
+div[class*='language-'] {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* 正文链接稍微精致一点 */
+.vp-doc a {
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.14em;
+}
+
+/* ==========================================================================
+   9) 可选：首页标题宽度、内容宽度微调
+   如果你想更像博客而不是纯文档站，可以保留下面这部分
+   ========================================================================== */
+
+
+/* .VPHero .container,
+.VPDoc .container {
+  max-width: 1320px;
+} */
+
