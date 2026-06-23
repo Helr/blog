@@ -1,20 +1,33 @@
-import {defineNavbarConfig, type NavItem} from "vuepress-theme-plume";
-import {zhVueNote} from "../../notes/zhNotes/Vue";
+import {defineNavbarConfig, type ThemeNavItem} from "vuepress-theme-plume";
 
-export const zhNavbar: NavItem[] = defineNavbarConfig([
+export const zhNavbar: ThemeNavItem[] = defineNavbarConfig([
     {text: '首页', link: '/'},
-    {text: '博客', link: '/blog/'},
-    {text: '标签', link: '/blog/tags/'},
-    {text: '归档', link: '/blog/archives/'},
-    {text: '代办', link: '/blog/TODO/'},
+    {text: '博客', link: '/posts/'},
     {
-        text: '笔记',
-        activeMatch: '^/notes/',
+        text: '系列', 
+        // link: '/series/',
+        // prefix: '/series/',
+        activeMatch:'^/series/',
         items: [
-            {text: '示例', link: '/notes/demo/README.md'},
-            {text: 'Git', link: '/notes/Git/README.md'},
-            {text: 'JavaScript', link: '/notes/JavaScript/README.md'},
-            {text: 'Vue', link: '/notes/Vue/start.md'},
+            {text: 'JavaScript', link: '/series/JavaScript/README.md'},
+            {text: 'Vue', link: '/series/Vue/start.md'},
+            {text: '示例', link: '/series/demo/'},
+            {text: 'Git', link: '/series/Git/'},
+        ]
+
+    },
+    {text: '笔记', link: '/notes/'},
+    {text: '代办', link: '/docs/TODO/'},
+    // {text: '标签', link: '/tags/'},
+    // {text: '归档', link: '/archives/'},
+    {
+        text: '更多',
+        activeMatch: '^/link/',
+        items: [
+            {text: '示例', link: '/link/demo/README.md'},
+            {text: 'Git', link: '/link/Git/README.md'},
+            {text: 'JavaScript', link: '/link/JavaScript/README.md'},
+            {text: 'Vue', link: '/link/Vue/start.md'},
         ]
     },
 ])

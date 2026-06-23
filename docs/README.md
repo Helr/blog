@@ -1,8 +1,7 @@
 ---
 home: true
 config:
-  -
-    type: banner
+  - type: banner
     full: false
     banner: /images/blog/bg-blog.jpg
     bannerMask:
@@ -11,14 +10,15 @@ config:
     hero:
       name: helr
       tagline: Front End Developer
-      text: 犯错也可以是一种提升...
+      text: 知是行之始，行是知之成
       actions:
-        -
-          text: 我的博客
+        - text: 我的博客
           link: /blog/
           theme: brand
-        -
-          text: Github
+        - text: Github
           link: https://github.com/helr
           theme: alt
+title: helr
+createTime: 2026/02/12 15:02:28
+permalink: /blog/khi8mshg/
 ---

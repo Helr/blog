@@ -11,11 +11,11 @@ export default defineUserConfig({
       lang: 'zh-CN',
       description: '个人blog',
     },
-    '/en/': {
-      title: 'blog',
-      lang: 'en-US',
-      description: 'Personal blog',
-    },
+    // '/en/': {
+    //   title: 'blog',
+    //   lang: 'en-US',
+    //   description: 'Personal blog',
+    // },
   },
 
   bundler: webpackBundler(),

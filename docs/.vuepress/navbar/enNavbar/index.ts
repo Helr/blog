@@ -1,6 +1,6 @@
-import {defineNavbarConfig, type NavItem} from "vuepress-theme-plume";
+import {defineNavbarConfig, type ThemeNavItem} from "vuepress-theme-plume";
 
-export const enNavbar: NavItem[] = defineNavbarConfig([
+export const enNavbar: ThemeNavItem[] = defineNavbarConfig([
     {text: 'Home', link: '/en/'},
     {text: 'Blog', link: '/en/blog/'},
     {text: 'Tags', link: '/en/blog/tags/'},

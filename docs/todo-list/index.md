@@ -1,7 +1,7 @@
 ---
 title: TODO
 createTime: 2024/12/31 15:01:15
-permalink: /blog/TODO/
+permalink: /docs/TODO/
 tags:
   - TODO
   
